@@ -8,7 +8,7 @@ const HarvestBanner = ({ showButton, onPress, cardStyle }) => {
         <View style={[styles.harvestcard, cardStyle]}>
             <ImageBackground source={require("../../assets/img/harvest.png")} resizeMode='contain' style={[styles.harvestimage]}>
                 <LinearGradient
-                    colors={['rgba(79, 87, 101, 0)', '#FFD76F']}
+                    colors={['rgba(79, 87, 101, 0)', '#0B3680']}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                     style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
@@ -32,7 +32,7 @@ const HarvestBanner = ({ showButton, onPress, cardStyle }) => {
 
 const styles = StyleSheet.create({
     harvestcard: {
-        backgroundColor: "#FFD76F",
+        backgroundColor: "#7CADFF",
         padding: 10,
         flexDirection: "row",
         justifyContent: "space-around",

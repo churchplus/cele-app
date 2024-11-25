@@ -54,7 +54,7 @@ function HeaderTabs({ navigation }) {
             // setDisplaySoc(true)
             // setDisplayApp(false)
             goTo(1)
-        
+
         } else {
             setDisplaySoc(false)
             setDisplayApp(true)
@@ -83,77 +83,77 @@ function HeaderTabs({ navigation }) {
             <NetworkConectivityStatus />
             <CustomStatusBar backgroundColor={'transparent'} translucent={true} barStyle={'dark-content'} />
             {/* <StackHeader title={'Our Lady of The Holy Rosary Chaplaincy'} newStack /> */}
-           <View>
-           <LinearGradient
+            <View>
+                <LinearGradient
                     colors={['#8FFA08', '#ffffff']}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                     style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 200 }}
                 />
-                <View style={{height: 110 }}>
+                <View style={{ height: 110 }}>
                     <Image source={require('../assets/img/splash_image.png')} style={{ width: 100, height: 100, position: 'absolute', alignSelf: 'center' }} resizeMode="contain" />
-                    </View>
-           </View>
-            <View style={{ position: 'absolute', marginTop: 50, height, width}}>
-            <TabsProvider
-                defaultIndex={defaultTab}
-            // onChangeIndex={handleChangeIndex} optional
-            >
-                <Tabs
-                    // uppercase={false} // true/false | default=true (on material v2) | labels are uppercase
-                    // showTextLabel={false} // true/false | default=false (KEEP PROVIDING LABEL WE USE IT AS KEY INTERNALLY + SCREEN READERS)
-                    // iconPosition // leading, top | default=leading
-                    //   style={{ backgroundColor: COLORS.primary }} // works the same as AppBar in react-native-paper
-                    // dark={false} // works the same as AppBar in react-native-paper
-                    theme={{ colors: { surface: 'transparent', onSurface: '#073609', onSurfaceVariant: '#073609', primary: '#073609' } }} // works the same as AppBar in react-native-paper
-                    // mode="scrollable" // fixed, scrollable | default=fixed
-                    // showLeadingSpace={true} //  (default=true) show leading space in scrollable tabs inside the header
-                    disableSwipe={true} // (default=false) disable swipe to left/right gestures
+                </View>
+            </View>
+            <View style={{ position: 'absolute', marginTop: 50, height: height -50, width }}>
+                <TabsProvider
+                    defaultIndex={defaultTab}
+                // onChangeIndex={handleChangeIndex} optional
                 >
-                    <TabScreen
-                        label="Parish"
-                        onPress={() => {
-                            setDisplaySoc(false)
-                            setDisplayApp(true)
-                        }}
+                    <Tabs
+                        // uppercase={false} // true/false | default=true (on material v2) | labels are uppercase
+                        // showTextLabel={false} // true/false | default=false (KEEP PROVIDING LABEL WE USE IT AS KEY INTERNALLY + SCREEN READERS)
+                        // iconPosition // leading, top | default=leading
+                        //   style={{ backgroundColor: COLORS.primary }} // works the same as AppBar in react-native-paper
+                        // dark={false} // works the same as AppBar in react-native-paper
+                        theme={{ colors: { surface: 'transparent', onSurface: '#073609', onSurfaceVariant: '#073609', primary: '#073609' } }} // works the same as AppBar in react-native-paper
+                        // mode="scrollable" // fixed, scrollable | default=fixed
+                        // showLeadingSpace={true} //  (default=true) show leading space in scrollable tabs inside the header
+                        disableSwipe={true} // (default=false) disable swipe to left/right gestures
                     >
-                        <View style={{ flex: 1 }}>
-                            {
-                                displayApp ? (
-                                    <AppTabs />
-                                ) : null
-                            }
-                        </View>
-                    </TabScreen>
-                    <TabScreen
-                        label="Socials"
-                        // style={{ borderColor: 'red', borderWidth: 1 }}
-                        // icon="bag-suitcase"
-                        // optional props
-                        // badge={false} // only show indicator
-                        // badge="text"
-                        badge={newNotification ? messages.length : undefined}
-                        // onPressIn={() => {
-                        //   console.log('onPressIn explore');
-                        // }}
-                        onPress={() => {
-                            setDisplaySoc(true)
-                            setDisplayApp(false)
-                        }}
-                    >
-                        <View style={{ flex: 1 }}>
-                            {
-                                displaySoc ?
-                                    !userInfo?.userId ? (
-                                        <NoUserLoggedIn navigation={navigation} />
-                                    ) : friends.length > 0 ?
-                                        <SocialTabs />
-                                        : <ConnectionList isNew={true} />
-                                    : null
-                            }
-                        </View>
-                    </TabScreen>
-                    {/* <TabScreen
+                        <TabScreen
+                            label="Parish"
+                            onPress={() => {
+                                setDisplaySoc(false)
+                                setDisplayApp(true)
+                            }}
+                        >
+                            <View style={{ flex: 1 }}>
+                                {
+                                    displayApp ? (
+                                        <AppTabs />
+                                    ) : null
+                                }
+                            </View>
+                        </TabScreen>
+                        <TabScreen
+                            label="Socials"
+                            // style={{ borderColor: 'red', borderWidth: 1 }}
+                            // icon="bag-suitcase"
+                            // optional props
+                            // badge={false} // only show indicator
+                            // badge="text"
+                            badge={newNotification ? messages.length : undefined}
+                            // onPressIn={() => {
+                            //   console.log('onPressIn explore');
+                            // }}
+                            onPress={() => {
+                                setDisplaySoc(true)
+                                setDisplayApp(false)
+                            }}
+                        >
+                            <View style={{ flex: 1 }}>
+                                {
+                                    displaySoc ?
+                                        !userInfo?.userId ? (
+                                            <NoUserLoggedIn navigation={navigation} />
+                                        ) : friends.length > 0 ?
+                                            <SocialTabs />
+                                            : <ConnectionList isNew={true} />
+                                        : null
+                                }
+                            </View>
+                        </TabScreen>
+                        {/* <TabScreen
                         label="Finance"
                         onPress={() => {
                             // setDisplaySoc(false)
@@ -164,8 +164,8 @@ function HeaderTabs({ navigation }) {
                             <WelcomeScreen />
                         </View>
                     </TabScreen> */}
-                </Tabs>
-            </TabsProvider>
+                    </Tabs>
+                </TabsProvider>
             </View>
         </>
     )

@@ -18,6 +18,7 @@ import { churchYoutubeMedia } from '../redux/userSlice';
 import { LikePost } from '../services/social';
 import { catholicdevotionaltenantid, tenantId } from '../utils/config';
 import HarvestBanner from '../components/give/havestBanner';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 const TrendingMessages = ({ navigation, data, videoDetails }) => {
@@ -494,8 +495,8 @@ export const HomeScreen = ({ navigation }) => {
     const [pledgeUrl, setPledgeUrl] = useState("")
 
     const FirstQuickActions = [
-        'Parish Office',
-        'Parish Info',
+        'CCC Office & forms',
+        'CCC Info',
         'Check in',
         'Invite'
     ]
@@ -751,10 +752,10 @@ export const HomeScreen = ({ navigation }) => {
                             devotional ? (
                                 <View style={{ borderRadius: 15, marginTop: 15, borderWidth: 1, borderColor: 'transparent' }}>
                                     <LinearGradient
-                                        colors={['#2387CF00', '#04102E']}
+                                        colors={['#2387CF00', '#026674']}
                                         start={{ x: 0, y: 0 }}
                                         end={{ x: 0, y: 1 }}
-                                        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 15 }}
+                                        style={{ position: 'absolute', left: 0, right: 0, bottom: 0, borderRadius: 15, height: '60%' }}
                                     />
                                     {
                                         devotional.mediaUrl ? (
@@ -763,15 +764,15 @@ export const HomeScreen = ({ navigation }) => {
                                             <Image source={require("../assets/img/familydevotion.png")} style={{ width: "100%", height: 200, borderRadius: 15, zIndex: -1 }} />
                                         )
                                     }
-                                    <View style={{ position: "absolute", top: 70, alignItems: "center", width: "100%" }}>
-                                        <View style={{ backgroundColor: COLORS.white, borderRadius: 15, paddingHorizontal: 15, paddingVertical: 5 }}>
-                                            <Text style={{ color: COLORS.black, fontSize: 12, fontFamily: Fonts.semibold }}>Today's Devotion</Text>
-                                        </View>
-                                        <Text style={{ textAlign: "center", color: "rgba(244, 244, 244, 1)", fontSize: 16, fontFamily: Fonts.extrabold, marginTop: 5 }}>{devotional?.title}</Text>
-                                        <TouchableOpacity onPress={() => navigation.navigate('TodayDevotional', { data: devotional })}>
-                                            <View style={{ backgroundColor: "transparent", borderRadius: 20, paddingHorizontal: 20, paddingVertical: 5, borderWidth: 1, borderColor: COLORS.white, marginTop: 9 }}>
-                                                <Text style={{ fontWeight: 600, color: COLORS.white }}>Read more</Text>
+                                    <View style={{ position: "absolute", bottom: 0, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', width: "100%", paddingBottom: 10 }}>
+                                        <View style={{ width: '80%' }}>
+                                            <View style={{ flexDirection: 'row', width: '100%' }}>
+                                                <Text style={{ backgroundColor: COLORS.green, color: COLORS.black, fontSize: 12, fontFamily: Fonts.medium, paddingVertical: 3, paddingHorizontal: 5, borderRadius: 2 }}>Today's Devotion</Text>
                                             </View>
+                                            <Text style={{ color: "rgba(244, 244, 244, 1)", fontSize: 16, fontFamily: Fonts.extrabold, marginTop: 5 }}>{devotional?.title}</Text>
+                                        </View>
+                                        <TouchableOpacity onPress={() => navigation.navigate('TodayDevotional', { data: devotional })}>
+                                            <Icon name={"east"} color={COLORS.white} size={30} />
                                         </TouchableOpacity>
                                     </View>
                                 </View>
@@ -791,7 +792,7 @@ export const HomeScreen = ({ navigation }) => {
                         {
                             videoDetails.length > 0 ? (
                                 <>
-                                    <Text style={{ fontFamily: Fonts.extrabold, fontSize: 15, color: "rgba(0, 0, 0, 0.80)", marginTop: 20 }}>Trending Messages</Text>
+                                    <Text style={{ fontFamily: Fonts.extrabold, fontSize: 15, color: "rgba(0, 0, 0, 0.80)", marginTop: 20 }}>Trending Sermon</Text>
                                     <View style={{ marginTop: 10 }}>
                                         <FlatList
                                             data={videoDetails}

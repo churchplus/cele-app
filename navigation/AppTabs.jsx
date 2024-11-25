@@ -123,7 +123,7 @@ export const AppTabs = () => {
                         // borderTopLeftRadius: 20,
                         // borderTopRightRadius: 20,
                         shadowColor: 'black',
-                        backgroundColor: '#FFFFFF',
+                        backgroundColor: COLORS.primary,
                         shadowOffset: {
                             width: 0,
                             height: 10,
@@ -134,11 +134,12 @@ export const AppTabs = () => {
                         color: Light.black,
                         // height: 55
                     },
-                    tabBarActiveTintColor: COLORS.primary,
+                    tabBarActiveTintColor: COLORS.green,
+                    tabBarInactiveTintColor: COLORS.white,
                     tabBarLabelStyle: {
                         marginBottom: 6,
                         fontSize: 12,
-                        fontFamily: Fonts.medium
+                        fontFamily: Fonts.medium,
                     },
                     tabBarButton: (props) => <TouchableRipple rippleColor="rgba(0, 0, 0, .1)" {...props} />,
                     tabBarIconStyle: {
@@ -148,18 +149,18 @@ export const AppTabs = () => {
                         let colo = "";
                         
                         if (route.name === 'Home') {
-                            colo = focused ? COLORS.primary : "#999999";
+                            colo = focused ? COLORS.green : COLORS.white;
                         } else if (route.name === 'Media') {
-                            colo = focused ? COLORS.primary : "#808080";
+                            colo = focused ? COLORS.green : COLORS.white;
                         } else if (route.name === 'Store') {
-                            colo = focused ? COLORS.primary : "#808080";
+                            colo = focused ? COLORS.green : COLORS.white;
                         } else if (route.name === 'Give') {
-                            colo = focused ? COLORS.primary : "#808080";
+                            colo = focused ? COLORS.green : COLORS.white;
                         } else if (route.name === 'More') {
-                            colo = focused ? COLORS.primary : "#808080";
+                            colo = focused ? COLORS.green : COLORS.white;
                         }
                         else if (route.name === 'ProfileStack') {
-                            colo = focused ? COLORS.primary : "#808080";
+                            colo = focused ? COLORS.green : COLORS.white;
                         }
             
                         return (

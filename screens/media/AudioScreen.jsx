@@ -5,6 +5,7 @@ import { GetAllAudios } from "../../services/media";
 import { StackHeader } from "../reusables/index";
 import Input from "../reusables/Input";
 import { useSelector } from 'react-redux';
+import CustomStatusBar from "../reusables/StatusBar";
 
 const AudioScreen = ({ navigation }) => {
     const churchInfo = useSelector((state) => state.user.churchInfo);
@@ -46,6 +47,7 @@ const AudioScreen = ({ navigation }) => {
     ));
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <StackHeader title="Audios" goBack={() => navigation.goBack()} />
             <View style={{ backgroundColor: COLORS.white, paddingBottom: 20 }}>
                 <View style={styles.searchForm}>

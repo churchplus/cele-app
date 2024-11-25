@@ -16,6 +16,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import SelectDropdown from '../reusables/SelectDropdown';
 import { ImageModal } from '../reusables/Modal';
 import AutoHeightImage from 'react-native-auto-height-image';
+import CustomStatusBar from '../reusables/StatusBar';
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -140,6 +141,7 @@ const Profile = () => {
     return (
         <>
             <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
                 <StackHeader title="Profile" goBack={() => navigation.goBack()} headerRight={otherOptions} />
 
                 {userInfo ? (

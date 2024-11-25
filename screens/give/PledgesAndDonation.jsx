@@ -9,6 +9,7 @@ import { SwipeModal } from "../reusables/Modal"
 import { Badge, Button, Chip } from "react-native-paper"
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from "react-native-linear-gradient"
+import CustomStatusBar from "../reusables/StatusBar"
 
 const PledgesAndDonation = ({ navigation, route }) => {
     const { makePledgeUrl, pledgeUrl } = route.params;
@@ -68,6 +69,7 @@ const PledgesAndDonation = ({ navigation, route }) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <ScrollView>
                 <StackHeader title="Pledges & Donation" goBack={() => navigation.goBack()} />
                 <View style={styles.sidecontainer}>

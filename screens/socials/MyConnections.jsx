@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { MessageConnection } from "../../assets/img/icons";
 import Input from "../reusables/Input";
 import { useEffect, useState } from "react";
+import CustomStatusBar from "../reusables/StatusBar";
 
 const MyConnections = ({ navigation }) => {
     const connectedFriends = useSelector((state) => state.user.connectedFriends);
@@ -17,6 +18,7 @@ const MyConnections = ({ navigation }) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <StackHeader title="My Connections" goBack={() => navigation.goBack()} />
             {/* <ScrollView> */}
                 <View style={styles.sidecontainer}>

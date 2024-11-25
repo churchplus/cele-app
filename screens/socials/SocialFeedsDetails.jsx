@@ -13,6 +13,7 @@ import dateFormatter from "../../utils/dateFormatter";
 import { useSelector } from "react-redux";
 import SelectDropdown from "../reusables/SelectDropdown";
 import { ThreeDots } from "../../assets/img/icons";
+import CustomStatusBar from "../reusables/StatusBar";
 
 const SocialFeedsDetails = ({ navigation, route }) => {
     const { data, postId } = route.params;
@@ -127,6 +128,7 @@ const SocialFeedsDetails = ({ navigation, route }) => {
     return (
         <>
             <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
                 <ScrollView>
                     <View>
                         <StackHeader title="Feed" goBack={() => navigation.goBack()} headerRight={otherOptions} />

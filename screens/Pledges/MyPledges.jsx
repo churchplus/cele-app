@@ -10,6 +10,7 @@ import { PersonPledges, SinglePledge } from "../../services/give";
 import { useSelector } from "react-redux";
 import dateFormatter from "../../utils/dateFormatter";
 import { numberWithCommas } from "../../utils/config";
+import CustomStatusBar from "../reusables/StatusBar";
 
 const MyPledges = ({ navigation }) => {
     const [value, setValue] = useState("all");
@@ -73,6 +74,7 @@ const MyPledges = ({ navigation }) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <ScrollView>
                 <StackHeader title="My Pledges" goBack={() => navigation.goBack()} />
                 <View style={styles.sideContainer}>

@@ -13,6 +13,7 @@ import { GetLookUps, GetUserProfile } from "../../services/service";
 import { BlockUser, GetUserSocialPost, GetUserSocialProfile, RequestConnection } from "../../services/social";
 import dateFormatter from "../../utils/dateFormatter";
 import SelectDropdown from "../reusables/SelectDropdown";
+import CustomStatusBar from "../reusables/StatusBar";
 
 const ConnectionProfile = ({ navigation, route }) => {
     const [connectionstate, setConnectionState] = useState("not connected")
@@ -116,6 +117,7 @@ const ConnectionProfile = ({ navigation, route }) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <ScrollView>
                 <View>
                     <StackHeader title="Profile" goBack={() => navigation.goBack()} headerRight={otherOptions} />

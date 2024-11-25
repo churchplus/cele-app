@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { COLORS, Fonts } from '../../assets/Theme';
 import * as Animatable from 'react-native-animatable';
+import CustomStatusBar from '../reusables/StatusBar';
 
 
 const OnlineGive = ({ navigation, route }) => {
@@ -10,8 +11,9 @@ const OnlineGive = ({ navigation, route }) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <ScrollView>
-                <View style={{ backgroundColor: COLORS.primary, height: 50, padding: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View style={{ backgroundColor: COLORS.dark2, height: 50, padding: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Icon name={"arrow-back-ios"} color={COLORS.white} size={20} />
                     </TouchableOpacity>

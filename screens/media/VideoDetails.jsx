@@ -4,6 +4,7 @@ import { COLORS, Fonts, height, width } from "../../assets/Theme";
 import YoutubePlayer from 'react-native-youtube-iframe';
 import { useRef } from "react";
 import { StackHeader } from "../reusables/index";
+import CustomStatusBar from "../reusables/StatusBar";
 
 const VideoDetails = ({ route, navigation }) => {
     const { data, videoDetails } = route.params;
@@ -16,6 +17,7 @@ const VideoDetails = ({ route, navigation }) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <StackHeader title={data?.videoId ? "Video Details" : "No Livestream"} goBack={() => navigation.goBack()} />
             {
                 data?.videoId ? (

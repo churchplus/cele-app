@@ -94,6 +94,7 @@ const LoginScreen = ({ navigation }) => {
     return (
         <>
             <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+            <CustomStatusBar backgroundColor={'transparent'} translucent={true} barStyle={'dark-content'} />
                 <ScrollView>
                     <View>
                         <View>

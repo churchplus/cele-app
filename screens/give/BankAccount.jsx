@@ -7,6 +7,7 @@ import { CopyIcon } from '../../assets/img/icons';
 import { Button, Snackbar } from 'react-native-paper';
 import * as Animatable from 'react-native-animatable';
 import { bankLogo } from '../../utils/bankLogo';
+import CustomStatusBar from '../reusables/StatusBar';
 
 const BankAccount = ({ navigation, route }) => {
     const { data } = route.params;
@@ -46,7 +47,8 @@ const BankAccount = ({ navigation, route }) => {
     return (
         <>
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-            <View style={{ backgroundColor: COLORS.primary, height: 50, padding: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
+            <View style={{ backgroundColor: COLORS.dark2, height: 50, padding: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
                 <TouchableOpacity onPress={() => {
                     navigation.goBack()
                 }}>

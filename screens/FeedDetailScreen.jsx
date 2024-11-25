@@ -17,6 +17,7 @@ import AutoHeightImage from 'react-native-auto-height-image';
 import Input from "./reusables/Input"
 import TextArea from './reusables/TextArea';
 import dateFormatter from '../utils/dateFormatter';
+import CustomStatusBar from './reusables/StatusBar';
 
 const FeedDetailScreen = ({ navigation, route }) => {
     const churchInfo = useSelector((state) => state.user.churchInfo);
@@ -153,6 +154,7 @@ const FeedDetailScreen = ({ navigation, route }) => {
 
     return (
         <>
+        <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <ScrollView ref={ref} style={{ flex: 1, backgroundColor: "#F4F4F4" }}>
                 <SafeAreaView>
                     <StackHeader title="Feeds" goBack={back} />

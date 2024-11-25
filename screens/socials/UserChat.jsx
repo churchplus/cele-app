@@ -8,6 +8,7 @@ import TextArea from "../reusables/TextArea";
 import { useSelector } from "react-redux";
 import dateFormatter from "../../utils/dateFormatter";
 import { Button } from "react-native-paper";
+import CustomStatusBar from "../reusables/StatusBar";
 
 const UserChat = ({ navigation, route }) => {
     const chatInputRef = useRef()
@@ -102,7 +103,7 @@ const UserChat = ({ navigation, route }) => {
     return (
         <>
             <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
                 <StackHeader title={name ? name : userInfo.userId == (chats.length > 0 && chats[0]?.sender?.id) ? chats[0]?.reciever?.name : chats[0]?.sender?.name} goBack={() => navigation.goBack()} />
                 {
                     getChatLoading ? (

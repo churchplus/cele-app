@@ -15,6 +15,7 @@ import { SwipeModal } from "../reusables/Modal";
 import { Button } from "react-native-paper";
 import dateFormatter from "../../utils/dateFormatter";
 import { catholicdevotionaltenantid } from "../../utils/config";
+import CustomStatusBar from "../reusables/StatusBar";
 
 const DevotionLibrary = ({ navigation }) => {
     const [devotionLibrary, setDevotionLibrary] = useState([])
@@ -75,6 +76,7 @@ const DevotionLibrary = ({ navigation }) => {
 
     return (
         <ScrollView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
             <SafeAreaView>
                 <StackHeader title="Devotional Library" goBack={() => navigation.goBack()} />
                 {

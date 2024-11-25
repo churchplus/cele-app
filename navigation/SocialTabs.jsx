@@ -11,6 +11,7 @@ import { Comment } from '../assets/img/comment';
 import { store } from '../redux/store';
 import { clearNotificationMessages, updateNewNoticationStatus, updateNotificationMessages } from '../redux/notificationSlice';
 import { useSelector } from 'react-redux';
+import CustomStatusBar from '../screens/reusables/StatusBar';
 
 
 const FeedTab = createBottomTabNavigator();
@@ -20,8 +21,7 @@ export const SocialTabs = () => {
 
     return (
         <>
-
-            <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
+        <CustomStatusBar backgroundColor={'transparent'} translucent={true} barStyle={'dark-content'} />
             <FeedTab.Navigator
                 screenOptions={({ focused, route }) => ({
                     headerShown: false,

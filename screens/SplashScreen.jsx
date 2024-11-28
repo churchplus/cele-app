@@ -103,7 +103,7 @@ const SplashScreen = ({ navigation }) => {
         <>
             {/* <StatusBar backgroundColor={'white'} translucent={true}  /> */}
             <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
-                <CustomStatusBar backgroundColor={'transparent'} translucent={true} barStyle={'dark-content'}  />
+                <CustomStatusBar backgroundColor={'transparent'} translucent={true} barStyle={'light-content'}  />
                     <View style={{ alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                         <Image source={require("../assets/img/splash_image.png")} style={{ width: 200, height: 200 }} resizeMode='contain' />
                     </View>

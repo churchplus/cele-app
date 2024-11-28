@@ -2,8 +2,9 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { COLORS } from "../../assets/Theme";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Fonts } from "../../assets/Theme";
+import LinearGradient from "react-native-linear-gradient";
 
-export const StackHeader = ({ goBack, title, newStack, headerRight }) => {
+export const StackHeader = ({ goBack, title, newStack, headerRight, headerGradient }) => {
     return (
         <View style={{ backgroundColor: COLORS.dark2 }}>
             <View style={{ paddingTop: 15, paddingHorizontal: newStack ? 15 : 0 }}>
@@ -22,9 +23,16 @@ export const StackHeader = ({ goBack, title, newStack, headerRight }) => {
                         </View>
                     ) : null
                 }
-                {/* <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingVertical: 15 }}> */}
-                    {/* <View style={{ width: 100 }}></View> */}
-                {/* </View> .   */}
+                {
+                    headerGradient && (
+                        <LinearGradient
+                            colors={[COLORS.green, '#ffffff']}
+                            start={{ x: 0, y: 0 }}
+                            end={{ x: 1, y: 0 }}
+                            style={{ top: 0, left: 0, right: 0, bottom: 0, height: 10 }}
+                        />
+                    )
+                }
             </View>
         </View>
     );

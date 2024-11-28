@@ -94,7 +94,7 @@ function HeaderTabs({ navigation }) {
                     <Image source={require('../assets/img/splash_image.png')} style={{ width: 100, height: 100, position: 'absolute', alignSelf: 'center' }} resizeMode="contain" />
                 </View>
             </View>
-            <View style={{ position: 'absolute', marginTop: 50, height: height -50, width }}>
+            <View style={{ position: 'absolute', marginTop: 50, height: height - 24, width }}>
                 <TabsProvider
                     defaultIndex={defaultTab}
                 // onChangeIndex={handleChangeIndex} optional

@@ -8,7 +8,6 @@ import { ForgotPasswordRequest, ResetPasswordRequest, SendUserOTP } from "../../
 import { useSelector } from "react-redux";
 import * as Animatable from 'react-native-animatable';
 import CustomStatusBar from "../reusables/StatusBar";
-import LinearGradient from 'react-native-linear-gradient';
 
 const ForgotPassword = ({ navigation, route }) => {
     const [email, setEmail] = useState("");
@@ -92,15 +91,9 @@ const ForgotPassword = ({ navigation, route }) => {
     }
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} />
+            <CustomStatusBar backgroundColor={COLORS.dark2} translucent={false} barStyle={'light-content'} headerGradient />
             <ScrollView>
                 <StackHeader title="Forgot Password" goBack={() => navigation.goBack()} />
-                <LinearGradient
-                    colors={[COLORS.green, '#ffffff']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    style={{ top: 0, left: 0, right: 0, bottom: 0, height: 10 }}
-                />
                 <View style={styles.sideContainer}>
                     <View>
                         <Text style={{ color: COLORS.dark, fontFamily: Fonts.semibold, fontSize: 16, marginBottom: 5, marginTop: 10 }}>Email</Text>

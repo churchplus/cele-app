@@ -31,7 +31,7 @@ import Profile from '../screens/profile/Profile';
 import QRScannerScreen from '../screens/QRScannerScreen';
 import RegisterEvent from '../screens/event/RegisterEvent';
 import { TouchableRipple } from 'react-native-paper';
-import { CloseIcon, Gift3, House, Media, ThreeDots } from '../assets/img/icons';
+import { CartIcon, CloseIcon, Gift3, House, Media, ThreeDots } from '../assets/img/icons';
 import TodayDevotional from '../screens/devotional/TodaysDevotional';
 import DevotionLibrary from '../screens/devotional/DevotionalLibrary';
 import SendCelebrantMessage from '../screens/celebrations/SendMessage';
@@ -63,6 +63,10 @@ import TransasctionPin from '../screens/finance/TransasctionPin';
 import FinanceDashboard from '../screens/finance/FinanceDashboard';
 import ReportUser from '../screens/useractions/ReportUser';
 import PostFlagged from '../screens/useractions/PostFlagged';
+import StoreHomePage from '../screens/store/StoreHomePage';
+import SingleProductDetails from '../screens/store/SingleProductDetails';
+import MyCart from '../screens/store/MyCart';
+import MinistryProduct from '../screens/store/MinistryProduct';
 
 const Tab = createBottomTabNavigator();
 // const Drawer = createDrawerNavigator();
@@ -174,7 +178,10 @@ export const AppTabs = () => {
                                         <Gift3 width={24} height={24} color={colo} />
                                     ) : route.name === "More" ? (
                                         <ThreeDots color={colo} size={25} />
-                                    ) : null
+                                    ) : route.name === "Store" ? (
+                                        <CartIcon color={colo} size={25} />
+                                    )
+                                    : null
                                 }
                             </View>
                         )
@@ -183,6 +190,7 @@ export const AppTabs = () => {
             >
                 <Tab.Screen name="Home" component={StackScreen} />
                 <Tab.Screen name="Media" component={MediaScreen} />
+                <Tab.Screen name="Store" component={StoreHomePage} />
                 <Tab.Screen name="Give" component={GiveStackScreen} />
                 <Tab.Screen name="More" component={MoreScreen}
                     listeners={{
@@ -256,6 +264,9 @@ function AppRoute() {
                     <Stack.Screen name="SocialStack" component={SocialTabs} options={{ headerShown: false }} />
                     <Stack.Screen name="ReportUser" component={ReportUser} options={{ headerShown: false }} />
                     <Stack.Screen name="PostFlagged" component={PostFlagged} options={{ headerShown: false }} />
+                    <Stack.Screen name="SingleProductDetails" component={SingleProductDetails} options={{ headerShown: false }} />
+                    <Stack.Screen name="MyCart" component={MyCart} options={{ headerShown: false }} />
+                    <Stack.Screen name="MinistryProduct" component={MinistryProduct} options={{ headerShown: false }} />
                 </Stack.Navigator>
             </NavigationContainer>
 
